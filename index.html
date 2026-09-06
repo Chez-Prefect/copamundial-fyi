@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CopaMundial.fyi — Tu guía independiente del Mundial FIFA</title>
-<meta name="description" content="La guía independiente de la Copa Mundial FIFA en español. Calendarios, sedes, guías de viaje, hoteles y todo lo que necesitas para vivir el Mundial 2026.">
-<meta property="og:title" content="CopaMundial.fyi — Tu guía del Mundial FIFA">
-<meta property="og:description" content="Guía independiente de aficionados para la Copa Mundial FIFA 2026. No somos FIFA. Somos fanáticos.">
+<title>CopaMundial.fyi — Tu guía independiente del Mundial FIFA 2030</title>
+<meta name="description" content="La guía independiente de la Copa Mundial FIFA 2030 en español. España, Portugal, Marruecos y los partidos del Centenario en Uruguay, Argentina y Paraguay — calendario, sedes, guías de viaje y más.">
+<meta property="og:title" content="CopaMundial.fyi — Tu guía del Mundial FIFA 2030">
+<meta property="og:description" content="Guía independiente de aficionados para la Copa Mundial FIFA 2030. Seis países, tres continentes, cien años de historia.">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -38,6 +38,9 @@
     font-weight: 300;
   }
 
+  a { color: var(--gold); }
+  a:hover { color: var(--gold-light); }
+
   /* DISCLAIMER BAR */
   .disclaimer-bar {
     background: rgba(200,168,75,0.1);
@@ -48,7 +51,7 @@
     color: var(--text-muted);
     letter-spacing: 0.02em;
   }
-  .disclaimer-bar a { color: var(--gold); text-decoration: none; }
+  .disclaimer-bar a { color: var(--gold); text-decoration: none; margin-left: 6px; }
 
   /* NAV */
   nav {
@@ -90,10 +93,7 @@
   }
   .nav-links a:hover { color: var(--gold); }
 
-  .lang-toggle {
-    display: flex;
-    gap: 4px;
-  }
+  .lang-toggle { display: flex; gap: 4px; }
   .lang-btn {
     background: none;
     border: 1px solid var(--border);
@@ -115,7 +115,7 @@
 
   /* HERO */
   .hero {
-    min-height: 92vh;
+    min-height: 88vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -143,31 +143,28 @@
     text-transform: uppercase;
     color: var(--gold);
     margin-bottom: 20px;
-    opacity: 0;
-    animation: fadeUp 0.6s ease 0.1s forwards;
+    position: relative;
   }
 
   .hero-title {
     font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(56px, 12vw, 130px);
+    font-size: clamp(52px, 11vw, 120px);
     line-height: 0.9;
     letter-spacing: 0.02em;
     margin-bottom: 8px;
-    opacity: 0;
-    animation: fadeUp 0.6s ease 0.2s forwards;
+    position: relative;
   }
   .hero-title .line1 { color: var(--text); display: block; }
   .hero-title .line2 { color: var(--green-light); display: block; }
-  .hero-title .line3 { color: var(--gold); display: block; font-size: clamp(32px, 7vw, 76px); letter-spacing: 0.08em; }
+  .hero-title .line3 { color: var(--gold); display: block; font-size: clamp(30px, 6vw, 68px); letter-spacing: 0.06em; }
 
   .hero-sub {
     font-size: clamp(14px, 2vw, 18px);
     color: var(--text-muted);
-    max-width: 560px;
+    max-width: 580px;
     margin: 28px auto 40px;
     font-weight: 300;
-    opacity: 0;
-    animation: fadeUp 0.6s ease 0.35s forwards;
+    position: relative;
   }
 
   .hero-cta-group {
@@ -175,8 +172,7 @@
     gap: 12px;
     flex-wrap: wrap;
     justify-content: center;
-    opacity: 0;
-    animation: fadeUp 0.6s ease 0.45s forwards;
+    position: relative;
   }
 
   .btn-primary {
@@ -191,8 +187,10 @@
     text-transform: uppercase;
     transition: all 0.2s;
     border: 1px solid var(--green);
+    display: inline-block;
+    cursor: pointer;
   }
-  .btn-primary:hover { background: var(--green-light); border-color: var(--green-light); }
+  .btn-primary:hover { background: var(--green-light); border-color: var(--green-light); color: #fff; }
 
   .btn-secondary {
     background: transparent;
@@ -206,6 +204,7 @@
     text-transform: uppercase;
     transition: all 0.2s;
     border: 1px solid var(--border);
+    display: inline-block;
   }
   .btn-secondary:hover { border-color: var(--gold); background: rgba(200,168,75,0.08); }
 
@@ -215,8 +214,7 @@
     margin-top: 64px;
     flex-wrap: wrap;
     justify-content: center;
-    opacity: 0;
-    animation: fadeUp 0.6s ease 0.55s forwards;
+    position: relative;
   }
   .stat { text-align: center; }
   .stat-num {
@@ -233,12 +231,7 @@
     letter-spacing: 0.1em;
     margin-top: 4px;
   }
-  .stat-divider {
-    width: 1px;
-    height: 50px;
-    background: var(--border);
-    align-self: center;
-  }
+  .stat-divider { width: 1px; height: 50px; background: var(--border); align-self: center; }
 
   /* COUNTDOWN */
   .countdown-section {
@@ -282,6 +275,13 @@
     letter-spacing: 0.12em;
     margin-top: 4px;
   }
+  .countdown-fine { font-size: 11px; color: var(--text-muted); margin-top: 14px; }
+  .live-ticker { display: flex; align-items: center; justify-content: center; gap: 12px; flex-wrap: wrap; }
+  .live-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--red); animation: pulse 1.4s infinite; }
+  @keyframes pulse { 0%,100%{opacity:1;} 50%{opacity:0.3;} }
+  .live-label { font-family: 'Bebas Neue', sans-serif; color: var(--red); letter-spacing: 0.1em; font-size: 20px; }
+  .post-title { font-family: 'Bebas Neue', sans-serif; font-size: 28px; color: var(--gold); letter-spacing: 0.04em; }
+  .post-link { display: inline-block; margin-top: 10px; color: var(--green-light); font-size: 13px; font-weight: 600; text-decoration: none; letter-spacing: 0.04em; text-transform: uppercase; }
 
   /* SECTIONS */
   section { padding: 72px 24px; max-width: 1100px; margin: 0 auto; }
@@ -304,9 +304,12 @@
   .section-sub {
     color: var(--text-muted);
     font-size: 16px;
-    max-width: 540px;
+    max-width: 560px;
     margin-bottom: 48px;
   }
+  .subhead-green { font-family:'Bebas Neue',sans-serif; font-size:20px; color:var(--green-light); letter-spacing:0.08em; margin-bottom:16px; margin-top:8px; }
+  .subhead-gold { font-family:'Bebas Neue',sans-serif; font-size:20px; color:var(--gold); letter-spacing:0.08em; margin-bottom:8px; margin-top:40px; }
+  .centennial-note { font-size:13px; color:var(--text-muted); margin-bottom:16px; max-width:640px; }
 
   /* CARD GRID */
   .card-grid {
@@ -325,29 +328,11 @@
     transition: all 0.2s;
     display: block;
   }
-  .card:hover {
-    border-color: rgba(200,168,75,0.5);
-    background: var(--dark3);
-    transform: translateY(-2px);
-  }
+  .card:hover { border-color: rgba(200,168,75,0.5); background: var(--dark3); transform: translateY(-2px); }
 
-  .card-icon {
-    font-size: 28px;
-    margin-bottom: 16px;
-    display: block;
-  }
-  .card-title {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 22px;
-    letter-spacing: 0.04em;
-    color: var(--gold);
-    margin-bottom: 8px;
-  }
-  .card-desc {
-    font-size: 14px;
-    color: var(--text-muted);
-    line-height: 1.6;
-  }
+  .card-icon { font-size: 28px; margin-bottom: 16px; display: block; }
+  .card-title { font-family: 'Bebas Neue', sans-serif; font-size: 22px; letter-spacing: 0.04em; color: var(--gold); margin-bottom: 8px; }
+  .card-desc { font-size: 14px; color: var(--text-muted); line-height: 1.6; }
   .card-link {
     display: inline-block;
     margin-top: 16px;
@@ -369,33 +354,27 @@
     border: 1px solid var(--border);
     border-radius: 10px;
     padding: 20px;
+    position: relative;
     transition: border-color 0.2s;
   }
   .venue-card:hover { border-color: rgba(0,166,90,0.4); }
-  .venue-country {
-    font-size: 10px;
-    font-weight: 600;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--green-light);
-    margin-bottom: 6px;
-  }
-  .venue-name {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 18px;
-    letter-spacing: 0.04em;
-    color: var(--text);
-    margin-bottom: 4px;
-  }
+  .venue-country { font-size: 14px; font-weight: 600; color: var(--text); margin-bottom: 4px; }
   .venue-city { font-size: 13px; color: var(--text-muted); }
-  .venue-cap {
-    font-size: 12px;
-    color: var(--gold);
-    margin-top: 8px;
-    font-weight: 500;
+  .centennial-card { border-color: rgba(200,168,75,0.35); }
+  .centennial-badge {
+    position: absolute;
+    top: -10px;
+    right: 16px;
+    background: var(--gold);
+    color: var(--dark);
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    padding: 3px 10px;
+    border-radius: 4px;
   }
 
-  /* HOTEL SECTION */
+  /* TRAVEL / MONETIZATION */
   .hotel-section {
     background: var(--dark2);
     border-top: 1px solid var(--border);
@@ -407,7 +386,7 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     gap: 16px;
-    margin-top: 40px;
+    margin-top: 16px;
   }
   .hotel-card {
     background: var(--dark);
@@ -415,14 +394,8 @@
     border-radius: 10px;
     padding: 24px;
   }
-  .hotel-city {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 20px;
-    color: var(--gold);
-    margin-bottom: 6px;
-    letter-spacing: 0.04em;
-  }
-  .hotel-venue { font-size: 12px; color: var(--text-muted); margin-bottom: 16px; }
+  .hotel-city { font-family: 'Bebas Neue', sans-serif; font-size: 20px; color: var(--gold); margin-bottom: 6px; letter-spacing: 0.04em; }
+  .hotel-venue { font-size: 13px; color: var(--text-muted); margin-bottom: 16px; }
   .hotel-btn {
     display: block;
     background: var(--green);
@@ -436,7 +409,26 @@
     letter-spacing: 0.04em;
     transition: background 0.2s;
   }
-  .hotel-btn:hover { background: var(--green-light); }
+  .hotel-btn:hover { background: var(--green-light); color: #fff; }
+  .affiliate-fine { font-size: 11px; color: var(--text-muted); margin-top: 20px; text-align: center; }
+
+  /* NEWSLETTER */
+  .newsletter-section { text-align: center; }
+  .newsletter-form { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-top: 8px; }
+  .newsletter-input {
+    background: var(--dark2);
+    border: 1px solid var(--border);
+    color: var(--text);
+    padding: 14px 18px;
+    border-radius: 6px;
+    font-family: 'Outfit', sans-serif;
+    font-size: 14px;
+    min-width: 260px;
+  }
+  .newsletter-input::placeholder { color: var(--text-muted); }
+  .newsletter-status { font-size: 13px; margin-top: 14px; min-height: 18px; }
+  .newsletter-status.success { color: var(--green-light); }
+  .newsletter-status.error { color: var(--red); }
 
   /* FOOTER */
   footer {
@@ -454,38 +446,48 @@
     display: block;
   }
   .footer-logo span { color: var(--green-light); }
-  .footer-disclaimer {
-    font-size: 11px;
-    color: var(--text-muted);
-    max-width: 680px;
-    margin: 0 auto 24px;
-    line-height: 1.7;
-  }
   .footer-links {
     display: flex;
     gap: 24px;
     justify-content: center;
     flex-wrap: wrap;
-    margin-bottom: 32px;
+    margin-bottom: 24px;
   }
-  .footer-links a {
-    color: var(--text-muted);
-    text-decoration: none;
-    font-size: 13px;
-    transition: color 0.2s;
-  }
+  .footer-links a { color: var(--text-muted); text-decoration: none; font-size: 13px; transition: color 0.2s; }
   .footer-links a:hover { color: var(--gold); }
+  .footer-disclaimer { font-size: 11px; color: var(--text-muted); max-width: 680px; margin: 0 auto 16px; line-height: 1.7; }
+  .footer-built { font-size: 11px; color: var(--gold-light); margin-bottom: 16px; }
   .footer-copy { font-size: 11px; color: rgba(138,158,141,0.5); }
 
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(16px); }
-    to { opacity: 1; transform: translateY(0); }
+  /* MOBILE STICKY CTA */
+  .sticky-cta-bar {
+    display: none;
+    position: fixed;
+    bottom: 0; left: 0; right: 0;
+    background: var(--dark2);
+    border-top: 1px solid var(--border);
+    padding: 10px 14px;
+    gap: 8px;
+    z-index: 200;
+  }
+  .sticky-cta-bar a {
+    flex: 1;
+    padding: 12px;
+    font-size: 12px;
+    border-radius: 6px;
+    text-align: center;
+    text-decoration: none;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
   }
 
   @media (max-width: 640px) {
     .nav-links { display: none; }
     .stat-divider { display: none; }
     .hero-stats { gap: 24px; }
+    .sticky-cta-bar { display: flex; }
+    body { padding-bottom: 76px; }
   }
 </style>
 </head>
@@ -493,279 +495,584 @@
 
 <!-- DISCLAIMER BAR -->
 <div class="disclaimer-bar">
-  Sitio no oficial de aficionados. No afiliado a FIFA®. &nbsp;|&nbsp; Unofficial fan site. Not affiliated with FIFA®. &nbsp;<a href="/about">Más info →</a>
+  <span id="disclaimerText">Sitio no oficial de aficionados. No afiliado a FIFA®.</span><a href="/about" id="disclaimerLink">Más info →</a>
 </div>
 
 <!-- NAV -->
 <nav>
   <a href="/" class="logo">Copa<span>Mundial</span>.fyi</a>
   <ul class="nav-links">
-    <li><a href="#sedes">Sedes</a></li>
-    <li><a href="#guias">Guías</a></li>
-    <li><a href="#hoteles">Hoteles</a></li>
-    <li><a href="#ver">Ver el Mundial</a></li>
+    <li><a href="#sedes" id="navVenues">Sedes</a></li>
+    <li><a href="#guias" id="navGuides">Guías</a></li>
+    <li><a href="#viaje" id="navStay">Viaje</a></li>
+    <li><a href="#newsletter" id="navWatch">Boletín</a></li>
   </ul>
   <div class="lang-toggle">
-    <button class="lang-btn active" onclick="setLang('es')">ES</button>
-    <button class="lang-btn" onclick="setLang('en')">EN</button>
+    <button class="lang-btn active" onclick="setLang('es')" id="langBtnEs">ES</button>
+    <button class="lang-btn" onclick="setLang('pt')" id="langBtnPt">PT</button>
+    <button class="lang-btn" onclick="setLang('en')" id="langBtnEn">EN</button>
   </div>
 </nav>
 
 <!-- HERO -->
 <section class="hero">
-  <p class="hero-eyebrow">Copa Mundial FIFA 2026 — Guía Independiente</p>
+  <p class="hero-eyebrow" id="heroEyebrow">COPA MUNDIAL 2030 — GUÍA INDEPENDIENTE</p>
   <h1 class="hero-title">
-    <span class="line1">LA COPA</span>
-    <span class="line2">MUNDIAL</span>
-    <span class="line3">es tuya.</span>
+    <span class="line1" id="heroLine1">CIEN AÑOS</span>
+    <span class="line2" id="heroLine2">DESPUÉS</span>
+    <span class="line3" id="heroLine3">vuelve a casa.</span>
   </h1>
-  <p class="hero-sub" id="hero-sub-text">
-    Guía independiente de aficionados para la Copa Mundial FIFA 2026. No somos FIFA. Somos fanáticos — en español, sin rodeos, con todo lo que necesitas.
-  </p>
+  <p class="hero-sub" id="heroSub">Guía independiente de aficionados para la Copa Mundial FIFA 2030. Seis países, tres continentes, cien años de historia — en español, sin rodeos.</p>
   <div class="hero-cta-group">
-    <a href="#guias" class="btn-primary">Ver guías 2026</a>
-    <a href="#hoteles" class="btn-secondary">Reservar hotel</a>
+    <a href="#guias" class="btn-primary" id="ctaPrimary">Ver guías 2030</a>
+    <a href="#viaje" class="btn-secondary" id="ctaSecondary">Planear viaje</a>
   </div>
   <div class="hero-stats">
-    <div class="stat">
-      <div class="stat-num">48</div>
-      <div class="stat-label">Selecciones</div>
-    </div>
+    <div class="stat"><div class="stat-num">48</div><div class="stat-label" id="statTeams">Selecciones</div></div>
     <div class="stat-divider"></div>
-    <div class="stat">
-      <div class="stat-num">104</div>
-      <div class="stat-label">Partidos</div>
-    </div>
+    <div class="stat"><div class="stat-num">104</div><div class="stat-label" id="statMatches">Partidos</div></div>
     <div class="stat-divider"></div>
-    <div class="stat">
-      <div class="stat-num">16</div>
-      <div class="stat-label">Sedes</div>
-    </div>
+    <div class="stat"><div class="stat-num">6</div><div class="stat-label" id="statHosts">Países anfitriones</div></div>
     <div class="stat-divider"></div>
-    <div class="stat">
-      <div class="stat-num">3</div>
-      <div class="stat-label">Países</div>
-    </div>
+    <div class="stat"><div class="stat-num">3</div><div class="stat-label" id="statContinents">Continentes</div></div>
   </div>
 </section>
 
 <!-- COUNTDOWN -->
 <div class="countdown-section">
-  <div class="countdown-label">Faltan para el Mundial 2026 / Days until the 2026 World Cup</div>
-  <div class="countdown-units">
-    <div class="countdown-unit">
-      <div class="countdown-num" id="cd-days">--</div>
-      <div class="countdown-unit-label">Días / Days</div>
+  <div class="countdown-label" id="countdownLabel">Faltan para el Mundial 2030</div>
+
+  <div id="cd-pre">
+    <div class="countdown-units">
+      <div class="countdown-unit"><div class="countdown-num" id="cd-days">--</div><div class="countdown-unit-label" id="cdDaysLabel">Días</div></div>
+      <div class="countdown-unit"><div class="countdown-num" id="cd-hours">--</div><div class="countdown-unit-label" id="cdHoursLabel">Horas</div></div>
+      <div class="countdown-unit"><div class="countdown-num" id="cd-mins">--</div><div class="countdown-unit-label" id="cdMinsLabel">Minutos</div></div>
+      <div class="countdown-unit"><div class="countdown-num" id="cd-secs">--</div><div class="countdown-unit-label" id="cdSecsLabel">Segundos</div></div>
     </div>
-    <div class="countdown-unit">
-      <div class="countdown-num" id="cd-hours">--</div>
-      <div class="countdown-unit-label">Horas / Hours</div>
-    </div>
-    <div class="countdown-unit">
-      <div class="countdown-num" id="cd-mins">--</div>
-      <div class="countdown-unit-label">Minutos / Mins</div>
-    </div>
-    <div class="countdown-unit">
-      <div class="countdown-num" id="cd-secs">--</div>
-      <div class="countdown-unit-label">Segundos / Secs</div>
-    </div>
+    <div class="countdown-fine" id="countdownNote">Fecha inaugural estimada — la FIFA aún no confirma el día exacto.</div>
+  </div>
+
+  <div id="cd-live" style="display:none;">
+    <div class="live-ticker"><span class="live-dot"></span><span class="live-label" id="liveLabel">EN VIVO</span></div>
+    <div class="countdown-fine" id="liveNote">El Mundial 2030 está en marcha — sigue los partidos en vivo.</div>
+  </div>
+
+  <div id="cd-post" style="display:none;">
+    <div class="post-title" id="postTitle">GRACIAS POR UN MUNDIAL HISTÓRICO</div>
+    <a href="#" class="post-link" id="postLink">Ver resumen completo →</a>
   </div>
 </div>
 
-<!-- GUIDES SECTION -->
+<!-- HOSTS -->
+<section id="sedes">
+  <div class="section-label" id="hostsLabel">Anfitriones 2030</div>
+  <h2 class="section-title" id="hostsTitle">Seis países, un siglo de fútbol</h2>
+  <p class="section-sub" id="hostsSub">Por primera vez, el Mundial se juega en tres continentes — cerrando el círculo abierto hace cien años en Uruguay.</p>
+
+  <h3 class="subhead-green" id="mainHostsLabel">Sedes principales</h3>
+  <div class="venues-grid" id="mainHostsGrid"></div>
+  <p class="centennial-note" id="mainHostsNote">Ciudades candidatas — la FIFA aún no confirma la lista final de sedes.</p>
+
+  <h3 class="subhead-gold" id="centennialLabel">Partidos del Centenario</h3>
+  <p class="centennial-note" id="centennialNote">Cada país recibe un partido inaugural conmemorativo por los 100 años de la primera Copa Mundial, jugada en Uruguay en 1930.</p>
+  <div class="venues-grid" id="centennialGrid"></div>
+</section>
+
+<!-- GUIDES -->
 <section id="guias">
-  <div class="section-label">Guías esenciales</div>
-  <h2 class="section-title">Todo lo que necesitas saber</h2>
-  <p class="section-sub">Desde conseguir visa hasta reservar hotel — cubrimos cada paso del camino.</p>
-  <div class="card-grid">
-    <a href="/guia-latinoamericanos-usa" class="card">
-      <span class="card-icon">✈️</span>
-      <div class="card-title">Latinoamericanos viajando a USA</div>
-      <div class="card-desc">Visas, vuelos, dinero, transporte y consejos para aficionados de México, Argentina, Colombia, Brasil y más.</div>
-      <span class="card-link">Leer guía →</span>
-    </a>
-    <a href="/el-tri-2026" class="card">
-      <span class="card-icon">🇲🇽</span>
-      <div class="card-title">El Tri en el Mundial 2026</div>
-      <div class="card-desc">Calendario de México, análisis del grupo, estadios en casa y todo sobre la selección mexicana en 2026.</div>
-      <span class="card-link">Seguir al Tri →</span>
-    </a>
-    <a href="/como-ver-mundial-2026" class="card">
-      <span class="card-icon">📺</span>
-      <div class="card-title">Cómo ver el Mundial 2026</div>
-      <div class="card-desc">Todos los canales y plataformas en EE.UU., México y Latinoamérica. Opciones gratuitas incluidas.</div>
-      <span class="card-link">Ver opciones →</span>
-    </a>
-    <a href="/calendario-2026" class="card">
-      <span class="card-icon">📅</span>
-      <div class="card-title">Calendario completo 2026</div>
-      <div class="card-desc">Fase de grupos, octavos, cuartos, semis y final. Fechas, horarios y sedes de todos los partidos.</div>
-      <span class="card-link">Ver calendario →</span>
-    </a>
-  </div>
+  <div class="section-label" id="guidesLabel">Guías esenciales</div>
+  <h2 class="section-title" id="guidesTitle">Empieza a planear hoy</h2>
+  <p class="section-sub" id="guidesSub">Cuatro años de anticipación, cero excusas — actualizamos estas guías desde ahora hasta el pitido inicial.</p>
+  <div class="card-grid" id="guidesGrid"></div>
 </section>
 
-<!-- VENUES SECTION -->
-<section id="sedes" style="padding-top: 0;">
-  <div class="section-label">Sedes del Mundial</div>
-  <h2 class="section-title">Los 16 estadios</h2>
-  <p class="section-sub">México, Estados Unidos y Canadá. Tres países, 16 estadios, 104 partidos.</p>
-
-  <h3 style="font-family:'Bebas Neue',sans-serif;font-size:20px;color:var(--green-light);letter-spacing:0.08em;margin-bottom:16px;margin-top:8px;">🇲🇽 México</h3>
-  <div class="venues-grid" style="margin-bottom:32px;">
-    <div class="venue-card">
-      <div class="venue-country">Ciudad de México</div>
-      <div class="venue-name">Estadio Azteca</div>
-      <div class="venue-city">Coyoacán, CDMX</div>
-      <div class="venue-cap">~87,500 aficionados</div>
-    </div>
-    <div class="venue-card">
-      <div class="venue-country">Guadalajara</div>
-      <div class="venue-name">Estadio Akron</div>
-      <div class="venue-city">Zapopan, Jalisco</div>
-      <div class="venue-cap">~49,850 aficionados</div>
-    </div>
-    <div class="venue-card">
-      <div class="venue-country">Monterrey</div>
-      <div class="venue-name">Estadio BBVA</div>
-      <div class="venue-city">Guadalupe, N.L.</div>
-      <div class="venue-cap">~53,500 aficionados</div>
-    </div>
-  </div>
-
-  <h3 style="font-family:'Bebas Neue',sans-serif;font-size:20px;color:var(--green-light);letter-spacing:0.08em;margin-bottom:16px;">🇺🇸 Estados Unidos</h3>
-  <div class="venues-grid">
-    <div class="venue-card">
-      <div class="venue-country">Nueva York / NJ</div>
-      <div class="venue-name">MetLife Stadium</div>
-      <div class="venue-city">East Rutherford, NJ — <strong style="color:var(--gold)">FINAL</strong></div>
-      <div class="venue-cap">82,500</div>
-    </div>
-    <div class="venue-card">
-      <div class="venue-country">Dallas</div>
-      <div class="venue-name">AT&T Stadium</div>
-      <div class="venue-city">Arlington, Texas</div>
-      <div class="venue-cap">80,000</div>
-    </div>
-    <div class="venue-card">
-      <div class="venue-country">Los Ángeles</div>
-      <div class="venue-name">SoFi Stadium</div>
-      <div class="venue-city">Inglewood, California</div>
-      <div class="venue-cap">70,240</div>
-    </div>
-    <div class="venue-card">
-      <div class="venue-country">Miami</div>
-      <div class="venue-name">Hard Rock Stadium</div>
-      <div class="venue-city">Miami Gardens, Florida</div>
-      <div class="venue-cap">65,326</div>
-    </div>
-    <div class="venue-card">
-      <div class="venue-country">Atlanta</div>
-      <div class="venue-name">Mercedes-Benz Stadium</div>
-      <div class="venue-city">Atlanta, Georgia</div>
-      <div class="venue-cap">71,000</div>
-    </div>
-    <div class="venue-card">
-      <div class="venue-country">Seattle</div>
-      <div class="venue-name">Lumen Field</div>
-      <div class="venue-city">Seattle, Washington</div>
-      <div class="venue-cap">69,000</div>
-    </div>
-  </div>
-</section>
-
-<!-- HOTELS SECTION -->
-<div class="hotel-section" id="hoteles">
+<!-- TRAVEL / MONETIZATION -->
+<div class="hotel-section" id="viaje">
   <div class="hotel-inner">
-    <div class="section-label">Alojamiento</div>
-    <h2 class="section-title">Reserva tu hotel ahora</h2>
-    <p class="section-sub" style="margin-bottom:0;">Los precios suben cada semana. Reserva con tarifa reembolsable para asegurar tu lugar sin riesgo.</p>
-    <div class="hotel-grid">
-      <div class="hotel-card">
-        <div class="hotel-city">Ciudad de México</div>
-        <div class="hotel-venue">Estadio Azteca</div>
-        <a href="https://www.booking.com/searchresults.html?ss=Mexico+City&checkin=2026-06-11&checkout=2026-07-20" class="hotel-btn" target="_blank" rel="noopener sponsored">Ver hoteles en CDMX →</a>
-      </div>
-      <div class="hotel-card">
-        <div class="hotel-city">Guadalajara</div>
-        <div class="hotel-venue">Estadio Akron</div>
-        <a href="https://www.booking.com/searchresults.html?ss=Guadalajara&checkin=2026-06-11&checkout=2026-07-20" class="hotel-btn" target="_blank" rel="noopener sponsored">Ver hoteles en GDL →</a>
-      </div>
-      <div class="hotel-card">
-        <div class="hotel-city">Monterrey</div>
-        <div class="hotel-venue">Estadio BBVA</div>
-        <a href="https://www.booking.com/searchresults.html?ss=Monterrey+Mexico&checkin=2026-06-11&checkout=2026-07-20" class="hotel-btn" target="_blank" rel="noopener sponsored">Ver hoteles en MTY →</a>
-      </div>
-      <div class="hotel-card">
-        <div class="hotel-city">Nueva York / NJ</div>
-        <div class="hotel-venue">MetLife — La Final</div>
-        <a href="https://www.booking.com/searchresults.html?ss=New+York&checkin=2026-07-17&checkout=2026-07-20" class="hotel-btn" target="_blank" rel="noopener sponsored">Ver hoteles en NY →</a>
-      </div>
-      <div class="hotel-card">
-        <div class="hotel-city">Dallas</div>
-        <div class="hotel-venue">AT&T Stadium</div>
-        <a href="https://www.booking.com/searchresults.html?ss=Dallas&checkin=2026-06-11&checkout=2026-07-20" class="hotel-btn" target="_blank" rel="noopener sponsored">Ver hoteles en Dallas →</a>
-      </div>
-      <div class="hotel-card">
-        <div class="hotel-city">Miami</div>
-        <div class="hotel-venue">Hard Rock Stadium</div>
-        <a href="https://www.booking.com/searchresults.html?ss=Miami&checkin=2026-06-11&checkout=2026-07-20" class="hotel-btn" target="_blank" rel="noopener sponsored">Ver hoteles en Miami →</a>
-      </div>
-    </div>
-    <p style="font-size:11px;color:var(--text-muted);margin-top:20px;text-align:center;">
-      Enlaces de afiliado — ganamos una pequeña comisión sin costo adicional para ti. / Affiliate links — we earn a small commission at no extra cost to you.
-    </p>
+    <div class="section-label" id="travelLabel">Planifica tu viaje</div>
+    <h2 class="section-title" id="travelTitle">Todo para llegar y quedarte</h2>
+    <p class="section-sub" id="travelSub" style="margin-bottom:0;">Alojamiento, vuelos y conectividad — comparado para que no pagues de más.</p>
+    <div class="hotel-grid" id="travelGrid"></div>
+    <p class="affiliate-fine" id="affiliateNote">Enlaces de afiliado — ganamos una pequeña comisión sin costo adicional para ti.</p>
   </div>
 </div>
+
+<!-- NEWSLETTER -->
+<section id="newsletter" class="newsletter-section">
+  <div class="section-label" id="newsletterLabel">Mantente al tanto</div>
+  <h2 class="section-title" id="newsletterTitle">Sé el primero en enterarte</h2>
+  <p class="section-sub" id="newsletterSub" style="margin-left:auto;margin-right:auto;">Boletos, sorteo de grupos, guías nuevas — directo a tu correo, sin spam.</p>
+  <form class="newsletter-form" id="newsletterForm">
+    <input type="email" class="newsletter-input" id="newsletterInput" placeholder="tu@correo.com" required>
+    <button class="btn-primary" id="newsletterButton" type="submit">Suscribirme</button>
+  </form>
+  <p class="newsletter-status" id="newsletterStatus" role="status"></p>
+</section>
 
 <!-- FOOTER -->
 <footer>
   <span class="footer-logo">Copa<span>Mundial</span>.fyi</span>
   <div class="footer-links">
-    <a href="/about">Acerca de / About</a>
-    <a href="/calendario-2026">Calendario</a>
-    <a href="/guia-latinoamericanos-usa">Guía de viaje</a>
-    <a href="/como-ver-mundial-2026">Ver el Mundial</a>
-    <a href="/el-tri-2026">El Tri</a>
+    <a href="/about" id="footerAbout">Acerca de</a>
+    <a href="#" id="footerCalendar">Calendario</a>
+    <a href="#" id="footerTravel">Guía de viaje</a>
+    <a href="#" id="footerWatch">Cómo ver</a>
+    <a href="#" id="footerCentennial">Centenario</a>
   </div>
-  <p class="footer-disclaimer">
-    CopaMundial.fyi es un sitio independiente de aficionados. No estamos afiliados, patrocinados ni autorizados por FIFA®, la Copa Mundial FIFA™ ni ningún organismo oficial. FIFA®, Copa Mundial FIFA™ y todas las marcas relacionadas son marcas registradas de FIFA. / Unofficial fan site. Not affiliated with or endorsed by FIFA® or any official organizing body. All FIFA trademarks are the property of FIFA.
-  </p>
-  <p class="footer-copy">© 2026 CopaMundial.fyi — Hecho por aficionados, para aficionados.</p>
+  <p class="footer-disclaimer" id="footerDisclaimer">CopaMundial.fyi es un sitio independiente de aficionados. No estamos afiliados, patrocinados ni autorizados por FIFA®, la Copa Mundial FIFA™ ni ningún organismo oficial. Todas las marcas relacionadas son propiedad de FIFA.</p>
+  <p class="footer-built" id="footerBuilt">Construyendo esta guía desde 2026, para el Mundial 2030.</p>
+  <p class="footer-copy">© 2030 CopaMundial.fyi <span id="footerCopy">— Hecho por aficionados, para aficionados.</span></p>
 </footer>
 
+<div class="sticky-cta-bar">
+  <a href="#" class="btn-secondary" id="stickyCalendar">Ver calendario</a>
+  <a href="#viaje" class="btn-primary" id="stickyReserve">Reservar</a>
+</div>
+
 <script>
-// Countdown to June 12, 2026
-function updateCountdown() {
-  const target = new Date('2026-06-12T00:00:00');
-  const now = new Date();
-  const diff = target - now;
-  if (diff <= 0) {
-    document.getElementById('cd-days').textContent = '¡YA!';
+// ---- i18n ----
+const DICT = {
+  es: {
+    disclaimer: "Sitio no oficial de aficionados. No afiliado a FIFA®.",
+    disclaimerLink: "Más info →",
+    bookLabel: "Reservar",
+    nav: { venues: "Sedes", guides: "Guías", stay: "Viaje", watch: "Boletín" },
+    hero: {
+      eyebrow: "COPA MUNDIAL 2030 — GUÍA INDEPENDIENTE",
+      line1: "CIEN AÑOS", line2: "DESPUÉS", line3: "vuelve a casa.",
+      sub: "Guía independiente de aficionados para la Copa Mundial FIFA 2030. Seis países, tres continentes, cien años de historia — en español, sin rodeos.",
+      ctaPrimary: "Ver guías 2030", ctaSecondary: "Planear viaje"
+    },
+    stats: { teams: "Selecciones", matches: "Partidos", hosts: "Países anfitriones", continents: "Continentes" },
+    countdown: {
+      label: "Faltan para el Mundial 2030",
+      note: "Fecha inaugural estimada — la FIFA aún no confirma el día exacto.",
+      days: "Días", hours: "Horas", mins: "Minutos", secs: "Segundos",
+      liveLabel: "EN VIVO",
+      liveNote: "El Mundial 2030 está en marcha — sigue los partidos en vivo.",
+      postTitle: "GRACIAS POR UN MUNDIAL HISTÓRICO", postLink: "Ver resumen completo →"
+    },
+    hostsSection: {
+      label: "Anfitriones 2030",
+      title: "Seis países, un siglo de fútbol",
+      sub: "Por primera vez, el Mundial se juega en tres continentes — cerrando el círculo abierto hace cien años en Uruguay."
+    },
+    mainHostsLabel: "Sedes principales",
+    mainHostsNote: "Ciudades candidatas — la FIFA aún no confirma la lista final de sedes.",
+    centennialLabel: "Partidos del Centenario",
+    centennialBadge: "CENTENARIO",
+    centennialNote: "Cada país recibe un partido inaugural conmemorativo por los 100 años de la primera Copa Mundial, jugada en Uruguay en 1930.",
+    hostCountriesMain: [
+      { flag: "🇪🇸", name: "España", cities: "Madrid · Barcelona · Sevilla" },
+      { flag: "🇵🇹", name: "Portugal", cities: "Lisboa · Oporto" },
+      { flag: "🇲🇦", name: "Marruecos", cities: "Casablanca · Rabat · Tánger" }
+    ],
+    hostCountriesCentennial: [
+      { flag: "🇺🇾", name: "Uruguay", venue: "Estadio Centenario, Montevideo" },
+      { flag: "🇦🇷", name: "Argentina", venue: "Estadio Monumental, Buenos Aires" },
+      { flag: "🇵🇾", name: "Paraguay", venue: "Estadio Defensores del Chaco, Asunción" }
+    ],
+    guidesSection: {
+      label: "Guías esenciales",
+      title: "Empieza a planear hoy",
+      sub: "Cuatro años de anticipación, cero excusas — actualizamos estas guías desde ahora hasta el pitido inicial."
+    },
+    guidesCta: "Leer guía →",
+    guides: [
+      { icon: "🕌", title: "Guía de Marruecos", desc: "Ciudades sede, visas, transporte y consejos culturales para el primer Mundial en el Magreb.", href: "/guia-marruecos-2030.html" },
+      { icon: "🛂", title: "Visa Schengen para latinoamericanos", desc: "Todo lo que necesitas para entrar a España y Portugal sin sorpresas en el aeropuerto." },
+      { icon: "🏆", title: "El Camino al Centenario", desc: "Uruguay, Argentina y Paraguay reciben partidos inaugurales por los 100 años de la primera Copa Mundial." },
+      { icon: "📺", title: "Cómo ver el Mundial 2030", desc: "Canales, streaming y plataformas gratuitas en España, Latinoamérica y Marruecos." },
+      { icon: "⚽", title: "Selecciones clasificadas", desc: "Sigue la ruta a 2030 — eliminatorias, repechajes y quién ya tiene su boleto." },
+      { icon: "📅", title: "Calendario completo 2030", desc: "Fase de grupos, eliminación directa y la final — fechas y sedes en cuanto se confirmen." }
+    ],
+    travelSection: {
+      label: "Planifica tu viaje",
+      title: "Todo para llegar y quedarte",
+      sub: "Alojamiento, vuelos y conectividad — comparado para que no pagues de más.",
+      affiliateNote: "Enlaces de afiliado — ganamos una pequeña comisión sin costo adicional para ti."
+    },
+    travelCards: [
+      { icon: "🏨", title: "Alojamiento", desc: "Compara precios en las 6 sedes antes de que suban.", link: "Buscar hotel →", href: "https://www.booking.com/" },
+      { icon: "✈️", title: "Vuelos", desc: "Compara aerolíneas para llegar a España, Portugal o Marruecos.", link: "Comparar vuelos →", href: "https://www.skyscanner.net/" },
+      { icon: "📶", title: "Conectividad", desc: "eSIM con datos en los 3 continentes, sin roaming sorpresa.", link: "Ver planes →", href: "https://www.airalo.com/" }
+    ],
+    newsletter: {
+      label: "Mantente al tanto",
+      title: "Sé el primero en enterarte",
+      sub: "Boletos, sorteo de grupos, guías nuevas — directo a tu correo, sin spam.",
+      placeholder: "tu@correo.com",
+      button: "Suscribirme",
+      sending: "Enviando…",
+      success: "¡Listo! Ya estás en la lista.",
+      invalidEmail: "Escribe un correo válido.",
+      error: "Algo salió mal. Intenta de nuevo en un momento."
+    },
+    footer: {
+      about: "Acerca de", calendar: "Calendario", travel: "Guía de viaje", watch: "Cómo ver", centennial: "Centenario",
+      disclaimer: "CopaMundial.fyi es un sitio independiente de aficionados. No estamos afiliados, patrocinados ni autorizados por FIFA®, la Copa Mundial FIFA™ ni ningún organismo oficial. Todas las marcas relacionadas son propiedad de FIFA.",
+      built: "Construyendo esta guía desde 2026, para el Mundial 2030.",
+      copy: "— Hecho por aficionados, para aficionados."
+    }
+  },
+  en: {
+    disclaimer: "Unofficial fan site. Not affiliated with FIFA®.",
+    disclaimerLink: "More info →",
+    bookLabel: "Book",
+    nav: { venues: "Hosts", guides: "Guides", stay: "Travel", watch: "Newsletter" },
+    hero: {
+      eyebrow: "FIFA WORLD CUP 2030 — INDEPENDENT GUIDE",
+      line1: "ONE HUNDRED", line2: "YEARS LATER", line3: "it comes home.",
+      sub: "Independent fan guide for the 2030 FIFA World Cup. Six countries, three continents, a hundred years of history — no fluff, just what you need.",
+      ctaPrimary: "See 2030 guides", ctaSecondary: "Plan your trip"
+    },
+    stats: { teams: "Teams", matches: "Matches", hosts: "Host countries", continents: "Continents" },
+    countdown: {
+      label: "Countdown to the 2030 World Cup",
+      note: "Estimated opening date — FIFA hasn't confirmed the exact day yet.",
+      days: "Days", hours: "Hours", mins: "Mins", secs: "Secs",
+      liveLabel: "LIVE",
+      liveNote: "The 2030 World Cup is underway — follow the matches live.",
+      postTitle: "THANK YOU FOR A HISTORIC WORLD CUP", postLink: "See the full recap →"
+    },
+    hostsSection: {
+      label: "2030 Hosts",
+      title: "Six countries, a century of football",
+      sub: "For the first time, the World Cup is played across three continents — closing the circle opened a hundred years ago in Uruguay."
+    },
+    mainHostsLabel: "Main hosts",
+    mainHostsNote: "Candidate cities — FIFA hasn't confirmed the final venue list yet.",
+    centennialLabel: "Centennial Matches",
+    centennialBadge: "CENTENNIAL",
+    centennialNote: "Each country hosts a commemorative opening match marking 100 years since the first World Cup, played in Uruguay in 1930.",
+    hostCountriesMain: [
+      { flag: "🇪🇸", name: "Spain", cities: "Madrid · Barcelona · Seville" },
+      { flag: "🇵🇹", name: "Portugal", cities: "Lisbon · Porto" },
+      { flag: "🇲🇦", name: "Morocco", cities: "Casablanca · Rabat · Tangier" }
+    ],
+    hostCountriesCentennial: [
+      { flag: "🇺🇾", name: "Uruguay", venue: "Estadio Centenario, Montevideo" },
+      { flag: "🇦🇷", name: "Argentina", venue: "Estadio Monumental, Buenos Aires" },
+      { flag: "🇵🇾", name: "Paraguay", venue: "Estadio Defensores del Chaco, Asuncion" }
+    ],
+    guidesSection: {
+      label: "Essential guides",
+      title: "Start planning today",
+      sub: "Four years' head start, zero excuses — we're updating these guides from now until kickoff."
+    },
+    guidesCta: "Read guide →",
+    guides: [
+      { icon: "🕌", title: "Morocco Travel Guide", desc: "Host cities, visas, transport, and cultural tips for the first World Cup in North Africa.", href: "/guia-marruecos-2030.html" },
+      { icon: "🛂", title: "Schengen Visa for Latin Americans", desc: "Everything you need to enter Spain and Portugal without airport surprises." },
+      { icon: "🏆", title: "The Road to the Centennial", desc: "Uruguay, Argentina, and Paraguay host opening matches marking 100 years since the first World Cup." },
+      { icon: "📺", title: "How to Watch the 2030 World Cup", desc: "Channels, streaming, and free options across Spain, Latin America, and Morocco." },
+      { icon: "⚽", title: "Qualified Teams", desc: "Follow the road to 2030 — qualifiers, playoffs, and who's already punched their ticket." },
+      { icon: "📅", title: "Full 2030 Schedule", desc: "Group stage, knockouts, and the final — dates and venues as they're confirmed." }
+    ],
+    travelSection: {
+      label: "Plan your trip",
+      title: "Everything to get there and stay",
+      sub: "Stays, flights, and connectivity — compared so you don't overpay.",
+      affiliateNote: "Affiliate links — we earn a small commission at no extra cost to you."
+    },
+    travelCards: [
+      { icon: "🏨", title: "Stays", desc: "Compare prices across all 6 host countries before they climb.", link: "Find a hotel →", href: "https://www.booking.com/" },
+      { icon: "✈️", title: "Flights", desc: "Compare airlines to reach Spain, Portugal, or Morocco.", link: "Compare flights →", href: "https://www.skyscanner.net/" },
+      { icon: "📶", title: "Connectivity", desc: "eSIM data across all 3 continents, no roaming surprises.", link: "See plans →", href: "https://www.airalo.com/" }
+    ],
+    newsletter: {
+      label: "Stay in the loop",
+      title: "Be the first to know",
+      sub: "Ticket sales, the group draw, new guides — straight to your inbox, no spam.",
+      placeholder: "you@email.com",
+      button: "Subscribe",
+      sending: "Sending…",
+      success: "You're in! Check your inbox.",
+      invalidEmail: "Enter a valid email address.",
+      error: "Something went wrong. Please try again shortly."
+    },
+    footer: {
+      about: "About", calendar: "Schedule", travel: "Travel guide", watch: "How to watch", centennial: "Centennial",
+      disclaimer: "CopaMundial.fyi is an independent fan site. We are not affiliated with, sponsored by, or endorsed by FIFA®, the FIFA World Cup™, or any official organizing body. All related trademarks are the property of FIFA.",
+      built: "Building this guide since 2026, for the 2030 World Cup.",
+      copy: "— Made by fans, for fans."
+    }
+  },
+  pt: {
+    disclaimer: "Site não oficial de torcedores. Não afiliado à FIFA®.",
+    disclaimerLink: "Mais info →",
+    bookLabel: "Reservar",
+    nav: { venues: "Sedes", guides: "Guias", stay: "Viagem", watch: "Newsletter" },
+    hero: {
+      eyebrow: "COPA DO MUNDO 2030 — GUIA INDEPENDENTE",
+      line1: "CEM ANOS", line2: "DEPOIS", line3: "a copa volta pra casa.",
+      sub: "Guia independente de torcedores para a Copa do Mundo FIFA 2030. Seis países, três continentes, cem anos de história — direto ao ponto.",
+      ctaPrimary: "Ver guias 2030", ctaSecondary: "Planejar viagem"
+    },
+    stats: { teams: "Seleções", matches: "Partidas", hosts: "Países-sede", continents: "Continentes" },
+    countdown: {
+      label: "Faltam para a Copa 2030",
+      note: "Data de abertura estimada — a FIFA ainda não confirmou o dia exato.",
+      days: "Dias", hours: "Horas", mins: "Min", secs: "Seg",
+      liveLabel: "AO VIVO",
+      liveNote: "A Copa de 2030 está em andamento — acompanhe as partidas ao vivo.",
+      postTitle: "OBRIGADO POR UMA COPA HISTÓRICA", postLink: "Ver resumo completo →"
+    },
+    hostsSection: {
+      label: "Anfitriões 2030",
+      title: "Seis países, um século de futebol",
+      sub: "Pela primeira vez, a Copa é disputada em três continentes — fechando o ciclo aberto há cem anos no Uruguai."
+    },
+    mainHostsLabel: "Sedes principais",
+    mainHostsNote: "Cidades candidatas — a FIFA ainda não confirmou a lista final de sedes.",
+    centennialLabel: "Partidas do Centenário",
+    centennialBadge: "CENTENÁRIO",
+    centennialNote: "Cada país recebe uma partida de abertura comemorativa pelos 100 anos da primeira Copa do Mundo, disputada no Uruguai em 1930.",
+    hostCountriesMain: [
+      { flag: "🇪🇸", name: "Espanha", cities: "Madri · Barcelona · Sevilha" },
+      { flag: "🇵🇹", name: "Portugal", cities: "Lisboa · Porto" },
+      { flag: "🇲🇦", name: "Marrocos", cities: "Casablanca · Rabat · Tânger" }
+    ],
+    hostCountriesCentennial: [
+      { flag: "🇺🇾", name: "Uruguai", venue: "Estadio Centenario, Montevidéu" },
+      { flag: "🇦🇷", name: "Argentina", venue: "Estadio Monumental, Buenos Aires" },
+      { flag: "🇵🇾", name: "Paraguai", venue: "Estadio Defensores del Chaco, Assunção" }
+    ],
+    guidesSection: {
+      label: "Guias essenciais",
+      title: "Comece a planejar hoje",
+      sub: "Quatro anos de antecedência, zero desculpas — atualizamos estes guias até o apito inicial."
+    },
+    guidesCta: "Ler guia →",
+    guides: [
+      { icon: "🕌", title: "Guia de Marrocos", desc: "Cidades-sede, vistos, transporte e dicas culturais para a primeira Copa no Norte da África.", href: "/guia-marruecos-2030.html" },
+      { icon: "🛂", title: "Visto Schengen para latino-americanos", desc: "Tudo que você precisa para entrar em Espanha e Portugal sem surpresas no aeroporto." },
+      { icon: "🏆", title: "O Caminho do Centenário", desc: "Uruguai, Argentina e Paraguai recebem partidas de abertura pelos 100 anos da primeira Copa do Mundo." },
+      { icon: "📺", title: "Como assistir à Copa 2030", desc: "Canais, streaming e opções gratuitas em Portugal, América Latina e Marrocos." },
+      { icon: "⚽", title: "Seleções classificadas", desc: "Acompanhe o caminho até 2030 — eliminatórias, repescagens e quem já garantiu vaga." },
+      { icon: "📅", title: "Calendário completo 2030", desc: "Fase de grupos, mata-mata e a final — datas e sedes conforme confirmadas." }
+    ],
+    travelSection: {
+      label: "Planeje sua viagem",
+      title: "Tudo para chegar e ficar",
+      sub: "Hospedagem, voos e conectividade — comparados para você não pagar a mais.",
+      affiliateNote: "Links de afiliado — ganhamos uma pequena comissão sem custo extra para você."
+    },
+    travelCards: [
+      { icon: "🏨", title: "Hospedagem", desc: "Compare preços nos 6 países-sede antes que subam.", link: "Buscar hotel →", href: "https://www.booking.com/" },
+      { icon: "✈️", title: "Voos", desc: "Compare companhias aéreas para chegar à Espanha, Portugal ou Marrocos.", link: "Comparar voos →", href: "https://www.skyscanner.net/" },
+      { icon: "📶", title: "Conectividade", desc: "eSIM com dados nos 3 continentes, sem susto de roaming.", link: "Ver planos →", href: "https://www.airalo.com/" }
+    ],
+    newsletter: {
+      label: "Fique por dentro",
+      title: "Seja o primeiro a saber",
+      sub: "Venda de ingressos, sorteio dos grupos, novos guias — direto no seu e-mail, sem spam.",
+      placeholder: "voce@email.com",
+      button: "Inscrever-me",
+      sending: "Enviando…",
+      success: "Pronto! Você está na lista.",
+      invalidEmail: "Digite um e-mail válido.",
+      error: "Algo deu errado. Tente novamente em instantes."
+    },
+    footer: {
+      about: "Sobre", calendar: "Calendário", travel: "Guia de viagem", watch: "Como assistir", centennial: "Centenário",
+      disclaimer: "CopaMundial.fyi é um site independente de torcedores. Não somos afiliados, patrocinados ou endossados pela FIFA®, a Copa do Mundo FIFA™ ou qualquer órgão oficial. Todas as marcas relacionadas são propriedade da FIFA.",
+      built: "Construindo este guia desde 2026, para a Copa de 2030.",
+      copy: "— Feito por torcedores, para torcedores."
+    }
+  }
+};
+
+let currentLang = 'es';
+
+function renderLang(lang) {
+  currentLang = lang;
+  const t = DICT[lang];
+
+  document.getElementById('disclaimerText').textContent = t.disclaimer;
+  document.getElementById('disclaimerLink').textContent = t.disclaimerLink;
+
+  document.getElementById('navVenues').textContent = t.nav.venues;
+  document.getElementById('navGuides').textContent = t.nav.guides;
+  document.getElementById('navStay').textContent = t.nav.stay;
+  document.getElementById('navWatch').textContent = t.nav.watch;
+
+  document.getElementById('heroEyebrow').textContent = t.hero.eyebrow;
+  document.getElementById('heroLine1').textContent = t.hero.line1;
+  document.getElementById('heroLine2').textContent = t.hero.line2;
+  document.getElementById('heroLine3').textContent = t.hero.line3;
+  document.getElementById('heroSub').textContent = t.hero.sub;
+  document.getElementById('ctaPrimary').textContent = t.hero.ctaPrimary;
+  document.getElementById('ctaSecondary').textContent = t.hero.ctaSecondary;
+
+  document.getElementById('statTeams').textContent = t.stats.teams;
+  document.getElementById('statMatches').textContent = t.stats.matches;
+  document.getElementById('statHosts').textContent = t.stats.hosts;
+  document.getElementById('statContinents').textContent = t.stats.continents;
+
+  document.getElementById('countdownLabel').textContent = t.countdown.label;
+  document.getElementById('countdownNote').textContent = t.countdown.note;
+  document.getElementById('cdDaysLabel').textContent = t.countdown.days;
+  document.getElementById('cdHoursLabel').textContent = t.countdown.hours;
+  document.getElementById('cdMinsLabel').textContent = t.countdown.mins;
+  document.getElementById('cdSecsLabel').textContent = t.countdown.secs;
+  document.getElementById('liveLabel').textContent = t.countdown.liveLabel;
+  document.getElementById('liveNote').textContent = t.countdown.liveNote;
+  document.getElementById('postTitle').textContent = t.countdown.postTitle;
+  document.getElementById('postLink').textContent = t.countdown.postLink;
+
+  document.getElementById('hostsLabel').textContent = t.hostsSection.label;
+  document.getElementById('hostsTitle').textContent = t.hostsSection.title;
+  document.getElementById('hostsSub').textContent = t.hostsSection.sub;
+  document.getElementById('mainHostsLabel').textContent = t.mainHostsLabel;
+  document.getElementById('mainHostsNote').textContent = t.mainHostsNote;
+  document.getElementById('centennialLabel').textContent = t.centennialLabel;
+  document.getElementById('centennialNote').textContent = t.centennialNote;
+
+  document.getElementById('mainHostsGrid').innerHTML = t.hostCountriesMain.map(h =>
+    '<div class="venue-card"><div class="venue-country">' + h.flag + ' ' + h.name + '</div><div class="venue-city">' + h.cities + '</div></div>'
+  ).join('');
+
+  document.getElementById('centennialGrid').innerHTML = t.hostCountriesCentennial.map(c =>
+    '<div class="venue-card centennial-card"><div class="centennial-badge">' + t.centennialBadge + '</div><div class="venue-country">' + c.flag + ' ' + c.name + '</div><div class="venue-city">' + c.venue + '</div></div>'
+  ).join('');
+
+  document.getElementById('guidesLabel').textContent = t.guidesSection.label;
+  document.getElementById('guidesTitle').textContent = t.guidesSection.title;
+  document.getElementById('guidesSub').textContent = t.guidesSection.sub;
+  document.getElementById('guidesGrid').innerHTML = t.guides.map(g =>
+    '<a href="' + (g.href || '#') + '" class="card"><span class="card-icon">' + g.icon + '</span><div class="card-title">' + g.title + '</div><div class="card-desc">' + g.desc + '</div><span class="card-link">' + t.guidesCta + '</span></a>'
+  ).join('');
+
+  document.getElementById('travelLabel').textContent = t.travelSection.label;
+  document.getElementById('travelTitle').textContent = t.travelSection.title;
+  document.getElementById('travelSub').textContent = t.travelSection.sub;
+  document.getElementById('affiliateNote').textContent = t.travelSection.affiliateNote;
+  document.getElementById('travelGrid').innerHTML = t.travelCards.map(c =>
+    '<div class="hotel-card"><span class="card-icon">' + c.icon + '</span><div class="hotel-city">' + c.title + '</div><div class="hotel-venue">' + c.desc + '</div><a href="' + c.href + '" class="hotel-btn" target="_blank" rel="noopener sponsored">' + c.link + '</a></div>'
+  ).join('');
+
+  document.getElementById('newsletterLabel').textContent = t.newsletter.label;
+  document.getElementById('newsletterTitle').textContent = t.newsletter.title;
+  document.getElementById('newsletterSub').textContent = t.newsletter.sub;
+  document.getElementById('newsletterInput').placeholder = t.newsletter.placeholder;
+  document.getElementById('newsletterButton').textContent = t.newsletter.button;
+
+  document.getElementById('footerAbout').textContent = t.footer.about;
+  document.getElementById('footerCalendar').textContent = t.footer.calendar;
+  document.getElementById('footerTravel').textContent = t.footer.travel;
+  document.getElementById('footerWatch').textContent = t.footer.watch;
+  document.getElementById('footerCentennial').textContent = t.footer.centennial;
+  document.getElementById('footerDisclaimer').textContent = t.footer.disclaimer;
+  document.getElementById('footerBuilt').textContent = t.footer.built;
+  document.getElementById('footerCopy').textContent = t.footer.copy;
+
+  document.getElementById('stickyCalendar').textContent = t.footer.calendar;
+  document.getElementById('stickyReserve').textContent = t.bookLabel;
+
+  document.documentElement.lang = lang;
+  document.getElementById('langBtnEs').classList.toggle('active', lang === 'es');
+  document.getElementById('langBtnPt').classList.toggle('active', lang === 'pt');
+  document.getElementById('langBtnEn').classList.toggle('active', lang === 'en');
+}
+
+function setLang(lang) {
+  renderLang(lang);
+  try { localStorage.setItem('cm-lang', lang); } catch (e) {}
+}
+
+// ---- Newsletter signup ----
+const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+document.getElementById('newsletterForm').addEventListener('submit', async function (event) {
+  event.preventDefault();
+
+  const t = DICT[currentLang];
+  const input = document.getElementById('newsletterInput');
+  const button = document.getElementById('newsletterButton');
+  const status = document.getElementById('newsletterStatus');
+  const email = input.value.trim();
+
+  status.className = 'newsletter-status';
+  status.textContent = '';
+
+  if (!EMAIL_PATTERN.test(email)) {
+    status.textContent = t.newsletter.invalidEmail;
+    status.classList.add('error');
     return;
   }
-  const days = Math.floor(diff / 86400000);
-  const hours = Math.floor((diff % 86400000) / 3600000);
-  const mins = Math.floor((diff % 3600000) / 60000);
-  const secs = Math.floor((diff % 60000) / 1000);
-  document.getElementById('cd-days').textContent = days;
-  document.getElementById('cd-hours').textContent = String(hours).padStart(2,'0');
-  document.getElementById('cd-mins').textContent = String(mins).padStart(2,'0');
-  document.getElementById('cd-secs').textContent = String(secs).padStart(2,'0');
-}
-updateCountdown();
-setInterval(updateCountdown, 1000);
 
-// Language toggle
-function setLang(lang) {
-  document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
-  event.target.classList.add('active');
-  if (lang === 'en') {
-    document.getElementById('hero-sub-text').textContent = "Independent fan guide for the 2026 FIFA World Cup. We're not FIFA. We're fans — in Spanish first, English second, with everything you need.";
+  const originalLabel = button.textContent;
+  button.disabled = true;
+  button.textContent = t.newsletter.sending;
+
+  try {
+    const res = await fetch('/subscribe', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email })
+    });
+    const data = await res.json().catch(() => ({}));
+
+    if (res.ok && data.ok) {
+      status.textContent = t.newsletter.success;
+      status.classList.add('success');
+      input.value = '';
+    } else {
+      status.textContent = t.newsletter.error;
+      status.classList.add('error');
+    }
+  } catch (err) {
+    status.textContent = t.newsletter.error;
+    status.classList.add('error');
+  } finally {
+    button.disabled = false;
+    button.textContent = originalLabel;
+  }
+});
+
+// ---- Tournament-aware countdown ----
+// Opening date is FIFA's to confirm; this is an estimate based on the tournament's
+// expected June-July window. Update once FIFA announces the official calendar.
+const TOURNAMENT_START = new Date('2030-06-08T00:00:00');
+const TOURNAMENT_END = new Date('2030-07-21T23:59:59');
+
+function updateCountdown() {
+  const now = new Date();
+  const pre = document.getElementById('cd-pre');
+  const live = document.getElementById('cd-live');
+  const post = document.getElementById('cd-post');
+
+  if (now < TOURNAMENT_START) {
+    pre.style.display = '';
+    live.style.display = 'none';
+    post.style.display = 'none';
+    const diff = TOURNAMENT_START - now;
+    document.getElementById('cd-days').textContent = Math.floor(diff / 86400000);
+    document.getElementById('cd-hours').textContent = String(Math.floor((diff % 86400000) / 3600000)).padStart(2, '0');
+    document.getElementById('cd-mins').textContent = String(Math.floor((diff % 3600000) / 60000)).padStart(2, '0');
+    document.getElementById('cd-secs').textContent = String(Math.floor((diff % 60000) / 1000)).padStart(2, '0');
+  } else if (now <= TOURNAMENT_END) {
+    pre.style.display = 'none';
+    live.style.display = '';
+    post.style.display = 'none';
   } else {
-    document.getElementById('hero-sub-text').textContent = "Guía independiente de aficionados para la Copa Mundial FIFA 2026. No somos FIFA. Somos fanáticos — en español, sin rodeos, con todo lo que necesitas.";
+    pre.style.display = 'none';
+    live.style.display = 'none';
+    post.style.display = '';
   }
 }
+
+// ---- Init ----
+let initialLang = 'es';
+try {
+  const saved = localStorage.getItem('cm-lang');
+  if (saved && DICT[saved]) initialLang = saved;
+} catch (e) {}
+
+renderLang(initialLang);
+updateCountdown();
+setInterval(updateCountdown, 1000);
 </script>
 </body>
 </html>
